@@ -1,0 +1,7 @@
+{
+  "/menu/page": "app/menu/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/consultar-codigo/page": "app/consultar-codigo/page.js",
+  "/finalizacao-consulta/page": "app/finalizacao-consulta/page.js",
+  "/agendamentos/page": "app/agendamentos/page.js"
+}
