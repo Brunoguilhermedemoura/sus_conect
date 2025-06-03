@@ -1,4 +1,4 @@
-// File: D:\projeto_dev\sus\sus_frontend\app\lista-ocorrencias\page.tsx
+// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\lista-ocorrencias\page.tsx
 import * as entry from '../../../../app/lista-ocorrencias/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

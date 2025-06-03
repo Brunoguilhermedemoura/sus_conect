@@ -4191,8 +4191,8 @@ video {
     width: 16rem;
   }
 
-  .md\:w-\[400px\] {
-    width: 400px;
+  .md\:w-\[500px\] {
+    width: 500px;
   }
 
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
@@ -4201,10 +4201,6 @@ video {
 
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-\[500px\] {
-    width: 500px;
   }
 
   .md\:max-w-\[420px\] {

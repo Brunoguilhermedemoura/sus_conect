@@ -1,7 +1,11 @@
 {
   "/menu/page": "app/menu/page.js",
+  "/page": "app/page.js",
+  "/unidades/page": "app/unidades/page.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/login/page": "app/login/page.js",
   "/consultar-codigo/page": "app/consultar-codigo/page.js",
-  "/finalizacao-consulta/page": "app/finalizacao-consulta/page.js",
-  "/agendamentos/page": "app/agendamentos/page.js"
+  "/fale-conosco/page": "app/fale-conosco/page.js",
+  "/dados-pessoais/page": "app/dados-pessoais/page.js",
+  "/lista-ocorrencias/page": "app/lista-ocorrencias/page.js"
 }
