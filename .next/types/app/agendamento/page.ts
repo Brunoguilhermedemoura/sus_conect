@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: C:\Users\User\Documents\sus_conect\app\agendamento\page.tsx
+=======
+// File: C:\Users\Daniel\Documents\sus_conect_2\app\agendamento\page.tsx
+>>>>>>> 08b7cff45a641a5592f8322943dacebacd9ed293
 import * as entry from '../../../../app/agendamento/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import { cn } from "@/lib/utils"
@@ -26,6 +27,7 @@ interface MainHeaderProps {
 export function MainHeader({ userName = "Maria Silva", userInitials = "MS", userAvatar }: MainHeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +37,8 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const isHomePage = pathname === "/"
 
   return (
     <header
@@ -94,65 +98,68 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
             </Link>
           </nav>
 
-          <div className="flex items-center gap-2">
-            {userName ? (
-              <>
-                <Button variant="ghost" size="icon" className="relative">
-                  <Bell className="h-5 w-5" />
-                  <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center">3</Badge>
+          {/* Ícones do canto direito - escondido na home */}
+          {!isHomePage && (
+            <div className="flex items-center gap-2">
+              {userName ? (
+                <>
+                  <Button variant="ghost" size="icon" className="relative">
+                    <Bell className="h-5 w-5" />
+                    <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center">3</Badge>
+                  </Button>
+
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" className="p-1">
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src={userAvatar || "/placeholder.svg"} alt={userName} />
+                          <AvatarFallback className="bg-primary text-white">{userInitials}</AvatarFallback>
+                        </Avatar>
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end">
+                      <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem asChild>
+                        <Link href="/perfil">Perfil</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/agendamentos">Meus Agendamentos</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/historico">Histórico Médico</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem asChild>
+                        <Link href="/configuracoes">Configurações</Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/login">Sair</Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </>
+              ) : (
+                <Button asChild className="rounded-full" variant="default">
+                  <Link href="/login">
+                    <User className="h-4 w-4 mr-2" />
+                    Entrar
+                  </Link>
                 </Button>
+              )}
+            </div>
+          )}
 
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" className="p-1">
-                      <Avatar className="h-8 w-8">
-                        <AvatarImage src={userAvatar || "/placeholder.svg"} alt={userName} />
-                        <AvatarFallback className="bg-primary text-white">{userInitials}</AvatarFallback>
-                      </Avatar>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild>
-                      <Link href="/perfil">Perfil</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/agendamentos">Meus Agendamentos</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/historico">Histórico Médico</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild>
-                      <Link href="/configuracoes">Configurações</Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/login">Sair</Link>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </>
-            ) : (
-              <Button asChild className="rounded-full" variant="default">
-                <Link href="/login">
-                  <User className="h-4 w-4 mr-2" />
-                  Entrar
-                </Link>
-              </Button>
-            )}
+          <ModeToggle />
 
-            <ModeToggle />
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
