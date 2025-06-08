@@ -1,4 +1,4 @@
-// File: C:\Users\User\Documents\sus_conect\app\cadastro\page.tsx
+// File: D:\projeto_dev\sus_conect\frontend\app\cadastro\page.tsx
 import * as entry from '../../../../app/cadastro/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
