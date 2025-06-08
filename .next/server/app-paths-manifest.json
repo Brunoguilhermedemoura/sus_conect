@@ -1,10 +1,9 @@
 {
-  "/page": "app/page.js",
-<<<<<<< HEAD
-  "/cadastro/page": "app/cadastro/page.js",
-=======
->>>>>>> 156b7dc734abd2ec4b5aab348119ca854aa07795
+  "/_not-found/page": "app/_not-found/page.js",
   "/login/page": "app/login/page.js",
+  "/menu/page": "app/menu/page.js",
+  "/agendamentos/page": "app/agendamentos/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/cadastro-confirmado/page": "app/cadastro-confirmado/page.js"
+  "/agendamento/page": "app/agendamento/page.js",
+  "/page": "app/page.js"
 }

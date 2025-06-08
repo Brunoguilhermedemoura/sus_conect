@@ -107,13 +107,13 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuItem asChild>
-                  <Link href="/sobre">Sobre o SUS</Link>
+                  <Link href="https://www.gov.br/saude/pt-br/sus">Sobre o SUS</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/direitos">Direitos do Paciente</Link>
+                  <Link href="/informacoes">Direitos do Paciente</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/perguntas-frequentes">Perguntas Frequentes</Link>
+                  <Link href="/informacoes">Perguntas Frequentes</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

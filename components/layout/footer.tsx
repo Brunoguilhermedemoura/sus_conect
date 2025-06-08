@@ -59,7 +59,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/medicamentos"
+                  href="/login"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Medicamentos
@@ -67,7 +67,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/vacinas"
+                  href="/login"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Vacinas
@@ -75,7 +75,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/exames"
+                  href="/login"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Exames
@@ -89,7 +89,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/sobre"
+                  href="https://www.gov.br/saude/pt-br/sus"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Sobre o SUS
@@ -97,7 +97,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/direitos"
+                  href="/informacoes"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Direitos do Paciente
@@ -105,7 +105,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/perguntas-frequentes"
+                  href="/informacoes"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Perguntas Frequentes
@@ -113,7 +113,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/politica-privacidade"
+                  href="/informacoes"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Política de Privacidade
@@ -121,7 +121,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/termos-uso"
+                  href="/informacoes"
                   className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
                 >
                   Termos de Uso
@@ -139,12 +139,12 @@ export function Footer() {
               </li>
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mr-2 text-primary shrink-0" />
-                <span className="text-gray-600 dark:text-gray-400">ouvidoria@saude.gov.br</span>
+                <span className="text-gray-600 dark:text-gray-400">sus_connect@saude.gov.br</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-2 text-primary shrink-0" />
                 <span className="text-gray-600 dark:text-gray-400">
-                  Esplanada dos Ministérios, Bloco G, Brasília - DF, 70058-900
+                Servidão Anjo da Guarda 295D (Bairro Efapi), Chapecó, SC, 89809-900
                 </span>
               </li>
             </ul>

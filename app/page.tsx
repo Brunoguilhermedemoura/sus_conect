@@ -81,7 +81,7 @@ export default function Home() {
                   Marque consultas com especialistas de forma rápida e escolha a unidade mais próxima de você.
                 </p>
                 <Button asChild variant="outline" className="w-full group">
-                  <Link href="/agendamento">
+                  <Link href="/login">
                     Agendar agora
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
@@ -100,7 +100,7 @@ export default function Home() {
                   Acesse seus resultados de exames e acompanhe seu histórico médico com facilidade.
                 </p>
                 <Button asChild variant="outline" className="w-full group">
-                  <Link href="/exames">
+                  <Link href="/login">
                     Consultar exames
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Link>

@@ -1,10 +1,5 @@
-<<<<<<< HEAD:.next/types/app/atendente/page.ts
-// File: D:\projeto_dev\sus_conect\frontend\app\atendente\page.tsx
-import * as entry from '../../../../app/atendente/page.js'
-=======
-// File: C:\Users\Daniel\Documents\sus_conect_2\app\unidades\page.tsx
+// File: D:\projeto_dev\sus_conect\frontend\app\unidades\page.tsx
 import * as entry from '../../../../app/unidades/page.js'
->>>>>>> 08b7cff45a641a5592f8322943dacebacd9ed293:.next/types/app/unidades/page.ts
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
 type TEntry = typeof import('../../../../app/unidades/page.js')

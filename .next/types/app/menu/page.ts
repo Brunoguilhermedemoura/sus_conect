@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// File: C:\Users\User\Documents\sus_conect\app\menu\page.tsx
-=======
-// File: C:\Users\Daniel\Documents\sus_conect_2\app\menu\page.tsx
->>>>>>> 08b7cff45a641a5592f8322943dacebacd9ed293
+// File: D:\projeto_dev\sus_conect\frontend\app\menu\page.tsx
 import * as entry from '../../../../app/menu/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
