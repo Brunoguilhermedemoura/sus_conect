@@ -1,7 +1,10 @@
 {
   "/page": "app/page.js",
+<<<<<<< HEAD
   "/cadastro/page": "app/cadastro/page.js",
+=======
+>>>>>>> 156b7dc734abd2ec4b5aab348119ca854aa07795
   "/login/page": "app/login/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/atendente/page": "app/atendente/page.js"
+  "/cadastro-confirmado/page": "app/cadastro-confirmado/page.js"
 }

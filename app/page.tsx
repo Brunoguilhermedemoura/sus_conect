@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect } from "react"
 import { MainHeader } from "@/components/layout/main-header"
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
@@ -7,6 +10,11 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function Home() {
+  useEffect(() => {
+    // Garante que a página role para o topo ao recarregar
+    window.scrollTo({ top: 0, behavior: "auto" })
+  }, [])
+
   return (
     <div className="flex flex-col min-h-screen">
       <MainHeader />
@@ -22,16 +30,13 @@ export default function Home() {
               >
                 Sistema Único de Saúde
               </Badge>
-
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
                 Cuidando da sua saúde com <span className="text-primary">simplicidade</span>
               </h1>
-
               <p className="text-lg text-gray-700 dark:text-gray-300 max-w-xl">
                 Acesse todos os serviços do SUS em um só lugar. Agende consultas, acompanhe exames e gerencie sua saúde
                 de forma prática e eficiente.
               </p>
-
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button asChild size="lg" className="rounded-full">
                   <Link href="/login">Acessar Conta</Link>
@@ -41,7 +46,6 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-
             <div className="md:w-1/2 relative">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-green-300 to-emerald-300 dark:from-green-800 dark:to-emerald-800 opacity-30 blur-xl"></div>
               <div className="relative gradient-border shadow-colored animate-float">
@@ -57,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* Serviços Rápidos */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+      <section id="servicos-rapidos" className="py-16 md:py-24 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Serviços Rápidos</h2>
@@ -65,7 +69,6 @@ export default function Home() {
               Acesse os serviços mais utilizados do SUS de forma rápida e prática
             </p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
               <div className="h-2 bg-primary w-full"></div>
@@ -236,7 +239,10 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+            {/* Contato */}
+      <div id="contato">
+        <Footer />
+      </div>
     </div>
   )
 }
