@@ -11,25 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/configuracoes/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/configuracoes/page.js"
+      "static/chunks/app/page.js"
     ],
-    "/menu/page": [
+    "/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/menu/page.js"
-    ],
-    "/lista-ocorrencias/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/lista-ocorrencias/loading.js"
-    ],
-    "/lista-ocorrencias/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/lista-ocorrencias/page.js"
+      "static/chunks/app/login/page.js"
     ],
     "/dashboard/loading": [
       "static/chunks/webpack.js",
@@ -51,30 +41,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/agendamento/page.js"
     ],
-    "/triagem/page": [
+    "/menu/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/triagem/page.js"
-    ],
-    "/dados-pessoais/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dados-pessoais/page.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
-    ],
-    "/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
-    ],
-    "/atendente/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/atendente/page.js"
+      "static/chunks/app/menu/page.js"
     ],
     "/agendamentos/loading": [
       "static/chunks/webpack.js",
@@ -86,20 +56,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/agendamentos/page.js"
     ],
+    "/triagem/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/triagem/page.js"
+    ],
     "/consultar-codigo/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/consultar-codigo/page.js"
     ],
-    "/fale-conosco/page": [
+    "/cadastro/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/fale-conosco/page.js"
+      "static/chunks/app/cadastro/page.js"
     ],
-    "/finalizacao-consulta/page": [
+    "/cadastro-confirmado/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/finalizacao-consulta/page.js"
+      "static/chunks/app/cadastro-confirmado/page.js"
     ]
   }
 }

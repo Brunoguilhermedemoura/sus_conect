@@ -1,4 +1,4 @@
-// File: D:\projeto_dev\sus\sus_frontend\app\consultar-codigo\page.tsx
+// File: C:\Users\User\Documents\sus_conect\app\consultar-codigo\page.tsx
 import * as entry from '../../../../app/consultar-codigo/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
