@@ -30,22 +30,35 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (pathname === "/" && typeof window !== "undefined") {
+      const scrollToServicos = sessionStorage.getItem("scrollToServicos")
+      const scrollToContato = sessionStorage.getItem("scrollToContato")
+      if (scrollToServicos === "true") {
+        const section = document.getElementById("servicos-rapidos")
+        section?.scrollIntoView({ behavior: "smooth" })
+        sessionStorage.removeItem("scrollToServicos")
+      }
+      if (scrollToContato === "true") {
+        const section = document.getElementById("contato")
+        section?.scrollIntoView({ behavior: "smooth" })
+        sessionStorage.removeItem("scrollToContato")
+      }
+    }
+  }, [pathname])
+
   const isHomePage = pathname === "/"
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md py-2" : "bg-transparent py-4",
-      )}>
+    <header className={cn(
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      isScrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md py-2" : "bg-transparent py-4"
+    )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -57,20 +70,34 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <Link
-              href="/servicos"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >
-              Serviços
-            </Link>
+            {isHomePage ? (
+              <button
+                onClick={() => {
+                  const section = document.getElementById("servicos-rapidos")
+                  section?.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+              >
+                Serviços
+              </button>
+            ) : (
+              <Link
+                href="/?scroll=servicos"
+                onClick={() => sessionStorage.setItem("scrollToServicos", "true")}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+              >
+                Serviços
+              </Link>
+            )}
+
             <Link
               href="/unidades"
               className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
             >
               Unidades
             </Link>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
@@ -90,15 +117,28 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link
-              href="/contato"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >
-              Contato
-            </Link>
+
+            {isHomePage ? (
+              <button
+                onClick={() => {
+                  const section = document.getElementById("contato")
+                  section?.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+              >
+                Contato
+              </button>
+            ) : (
+              <Link
+                href="/"
+                onClick={() => sessionStorage.setItem("scrollTo", "Contato")}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
+              >
+                Contato
+              </Link>
+            )}
           </nav>
 
-          {/* Ícones do canto direito - escondido na home */}
           {!isHomePage && (
             <div className="flex items-center gap-2">
               {userName ? (
@@ -107,7 +147,6 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
                     <Bell className="h-5 w-5" />
                     <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center">3</Badge>
                   </Button>
-
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" className="p-1">
@@ -162,45 +201,75 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav className="md:hidden py-4 flex flex-col gap-2 animate-in slide-in-from-top">
-            <Link
-              href="/servicos"
-              className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              Serviços
-            </Link>
+            {isHomePage ? (
+              <button
+                onClick={() => {
+                  const section = document.getElementById("servicos-rapidos")
+                  section?.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-left"
+              >
+                Serviços
+              </button>
+            ) : (
+              <Link
+                href="/?scroll=servicos"
+                onClick={() => sessionStorage.setItem("scrollToServicos", "true")}
+                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                Serviços
+              </Link>
+            )}
+
             <Link
               href="/unidades"
               className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               Unidades
             </Link>
+
             <Link
               href="/sobre"
               className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               Sobre o SUS
             </Link>
+
             <Link
               href="/direitos"
               className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               Direitos do Paciente
             </Link>
+
             <Link
               href="/perguntas-frequentes"
               className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               Perguntas Frequentes
             </Link>
-            <Link
-              href="/contato"
-              className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              Contato
-            </Link>
+
+            {isHomePage ? (
+              <button
+                onClick={() => {
+                  const section = document.getElementById("contato")
+                  section?.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-left"
+              >
+                Contato
+              </button>
+            ) : (
+              <Link
+                href="/?scroll=contato"
+                onClick={() => sessionStorage.setItem("scrollToContato", "true")}
+                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                Contato
+              </Link>
+            )}
           </nav>
         )}
       </div>
