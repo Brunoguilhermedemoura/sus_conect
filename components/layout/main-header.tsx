@@ -35,30 +35,16 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  useEffect(() => {
-    if (pathname === "/" && typeof window !== "undefined") {
-      const scrollToServicos = sessionStorage.getItem("scrollToServicos")
-      const scrollToContato = sessionStorage.getItem("scrollToContato")
-      if (scrollToServicos === "true") {
-        const section = document.getElementById("servicos-rapidos")
-        section?.scrollIntoView({ behavior: "smooth" })
-        sessionStorage.removeItem("scrollToServicos")
-      }
-      if (scrollToContato === "true") {
-        const section = document.getElementById("contato")
-        section?.scrollIntoView({ behavior: "smooth" })
-        sessionStorage.removeItem("scrollToContato")
-      }
-    }
-  }, [pathname])
-
   const isHomePage = pathname === "/"
+  const isDashboardPage = pathname.startsWith("/dashboard") || pathname === "/menu"
 
   return (
-    <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md py-2" : "bg-transparent py-4"
-    )}>
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md py-2" : "bg-transparent py-4"
+      )}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -70,18 +56,9 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6">
-            {isHomePage ? (
-              <button
-                onClick={() => {
-                  const section = document.getElementById("servicos-rapidos")
-                  section?.scrollIntoView({ behavior: "smooth" })
-                }}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-              >
-                Serviços
-              </button>
-            ) : (
+          {/* Menu principal visível apenas fora do dashboard e menu */}
+          {!isDashboardPage && (
+            <nav className="hidden md:flex items-center gap-6">
               <Link
                 href="/?scroll=servicos"
                 onClick={() => sessionStorage.setItem("scrollToServicos", "true")}
@@ -89,6 +66,7 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
               >
                 Serviços
               </Link>
+<<<<<<< HEAD
             )}
 
             <Link
@@ -124,152 +102,114 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
                   const section = document.getElementById("contato")
                   section?.scrollIntoView({ behavior: "smooth" })
                 }}
+=======
+              <Link
+                href="/unidades"
+>>>>>>> 5d36006edef4022c1f21708f5e0960b7677c4c62
                 className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
               >
-                Contato
-              </button>
-            ) : (
-              <Link
-                href="/"
-                onClick={() => sessionStorage.setItem("scrollTo", "Contato")}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-              >
-                Contato
+                Unidades
               </Link>
-            )}
-          </nav>
-
-          {!isHomePage && (
-            <div className="flex items-center gap-2">
-              {userName ? (
-                <>
-                  <Button variant="ghost" size="icon" className="relative">
-                    <Bell className="h-5 w-5" />
-                    <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center">3</Badge>
-                  </Button>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className="p-1">
-                        <Avatar className="h-8 w-8">
-                          <AvatarImage src={userAvatar || "/placeholder.svg"} alt={userName} />
-                          <AvatarFallback className="bg-primary text-white">{userInitials}</AvatarFallback>
-                        </Avatar>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem asChild>
-                        <Link href="/perfil">Perfil</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/agendamentos">Meus Agendamentos</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/historico">Histórico Médico</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem asChild>
-                        <Link href="/configuracoes">Configurações</Link>
-                      </DropdownMenuItem>
-                      <DropdownMenuItem asChild>
-                        <Link href="/login">Sair</Link>
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </>
-              ) : (
-                <Button asChild className="rounded-full" variant="default">
-                  <Link href="/login">
-                    <User className="h-4 w-4 mr-2" />
-                    Entrar
-                  </Link>
-                </Button>
-              )}
-            </div>
-          )}
-
-          <ModeToggle />
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
-
-        {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 flex flex-col gap-2 animate-in slide-in-from-top">
-            {isHomePage ? (
-              <button
-                onClick={() => {
-                  const section = document.getElementById("servicos-rapidos")
-                  section?.scrollIntoView({ behavior: "smooth" })
-                }}
-                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-left"
-              >
-                Serviços
-              </button>
-            ) : (
-              <Link
-                href="/?scroll=servicos"
-                onClick={() => sessionStorage.setItem("scrollToServicos", "true")}
-                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              >
-                Serviços
-              </Link>
-            )}
-
-            <Link
-              href="/unidades"
-              className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              Unidades
-            </Link>
-
-            <Link
-              href="/sobre"
-              className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              Sobre o SUS
-            </Link>
-
-            <Link
-              href="/direitos"
-              className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              Direitos do Paciente
-            </Link>
-
-            <Link
-              href="/perguntas-frequentes"
-              className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              Perguntas Frequentes
-            </Link>
-
-            {isHomePage ? (
-              <button
-                onClick={() => {
-                  const section = document.getElementById("contato")
-                  section?.scrollIntoView({ behavior: "smooth" })
-                }}
-                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-left"
-              >
-                Contato
-              </button>
-            ) : (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+                    Informações
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem asChild>
+                    <Link href="/sobre">Sobre o SUS</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/direitos">Direitos do Paciente</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/perguntas-frequentes">Perguntas Frequentes</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Link
                 href="/?scroll=contato"
                 onClick={() => sessionStorage.setItem("scrollToContato", "true")}
-                className="px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
               >
                 Contato
               </Link>
+            </nav>
+          )}
+
+          <div className="flex items-center gap-2">
+            <ModeToggle />
+
+            {!isHomePage && userName && (
+              <>
+                <Button variant="ghost" size="icon" className="relative">
+                  <Bell className="h-5 w-5" />
+                  <Badge className="absolute -top-1 -right-1 h-5 w-5 p-0 flex items-center justify-center">99</Badge>
+                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="p-1">
+                      <Avatar className="h-8 w-8">
+                        <AvatarImage src={userAvatar || "/placeholder.svg"} alt={userName} />
+                        <AvatarFallback className="bg-primary text-white">{userInitials}</AvatarFallback>
+                      </Avatar>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link href="/perfil">Perfil</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/agendamentos">Meus Agendamentos</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/historico">Histórico Médico</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link href="/configuracoes">Configurações</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/login">Sair</Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </>
             )}
+
+            {!isHomePage && !userName && (
+              <Button asChild className="rounded-full" variant="default">
+                <Link href="/login">
+                  <User className="h-4 w-4 mr-2" />
+                  Entrar
+                </Link>
+              </Button>
+            )}
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
+        </div>
+
+        {/* Menu mobile condicional */}
+        {!isDashboardPage && isMobileMenuOpen && (
+          <nav className="md:hidden py-4 flex flex-col gap-2 animate-in slide-in-from-top">
+            <Link href="/?scroll=servicos" onClick={() => sessionStorage.setItem("scrollToServicos", "true")}>Serviços</Link>
+            <Link href="/unidades">Unidades</Link>
+            <Link href="/sobre">Sobre o SUS</Link>
+            <Link href="/direitos">Direitos do Paciente</Link>
+            <Link href="/perguntas-frequentes">Perguntas Frequentes</Link>
+            <Link href="/?scroll=contato" onClick={() => sessionStorage.setItem("scrollToContato", "true")}>Contato</Link>
           </nav>
         )}
       </div>
