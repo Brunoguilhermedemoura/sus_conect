@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: D:\projeto_dev\sus_conect\frontend\app\unidades\page.tsx
+=======
+// File: C:\Users\User\Documents\sus_conect\app\unidades\page.tsx
+>>>>>>> bba404bfb21f3fffad05d7aa33bef73fcf541e31
 import * as entry from '../../../../app/unidades/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
