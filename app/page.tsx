@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import { useSearchParams } from "next/navigation"
 import { MainHeader } from "@/components/layout/main-header"
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
@@ -10,10 +11,30 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function Home() {
+  const searchParams = useSearchParams()
+
   useEffect(() => {
-    // Garante que a página role para o topo ao recarregar
-    window.scrollTo({ top: 0, behavior: "auto" })
-  }, [])
+    const scrollParam = searchParams.get("scroll")
+
+    // Verificar se há o parâmetro de rolagem
+    if (scrollParam) {
+      setTimeout(() => {
+        if (scrollParam === "servicos") {
+          document.getElementById("servicos-rapidos")?.scrollIntoView({ behavior: "smooth" })
+        }
+        if (scrollParam === "contato") {
+          document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 300)
+    }
+
+    // Sempre rolar para o topo quando a página for recarregada
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    
+    // Remover o parâmetro 'scroll' da URL após a rolagem
+    window.history.replaceState(null, "", window.location.pathname)
+
+  }, [searchParams])
 
   return (
     <div className="flex flex-col min-h-screen">

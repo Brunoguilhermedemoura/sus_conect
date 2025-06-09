@@ -1,11 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import { MainHeader } from "@/components/layout/main-header"
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import {
   Calendar,
@@ -17,13 +15,10 @@ import {
   Clock,
   Heart,
   Activity,
-  Bell,
   ChevronRight,
 } from "lucide-react"
 
 export default function Menu() {
-  const [notifications] = useState(3)
-
   const menuItems = [
     {
       title: "Agendamentos",
@@ -64,33 +59,9 @@ export default function Menu() {
     {
       title: "Fale Conosco",
       description: "Entre em contato conosco",
-      icon: Bell,
+      icon: FileText,
       href: "/fale-conosco",
       color: "bg-cyan-500",
-    },
-  ]
-
-  const adminItems = [
-    {
-      title: "Validação de Atendimento",
-      description: "Validar atendimentos de pacientes",
-      icon: UserCheck,
-      href: "/atendimento",
-      color: "bg-red-500",
-    },
-    {
-      title: "Confirmação de Atendimento",
-      description: "Confirmar presença de pacientes",
-      icon: Clock,
-      href: "/confirmacao-atendimento",
-      color: "bg-yellow-500",
-    },
-    {
-      title: "Configurações",
-      description: "Configurações do sistema",
-      icon: Settings,
-      href: "/configuracoes",
-      color: "bg-gray-500",
     },
   ]
 
@@ -101,16 +72,9 @@ export default function Menu() {
       <main className="container mx-auto px-4 pt-24 pb-8">
         {/* Header Section */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Bem-vindo ao SUS Digital</h1>
-              <p className="text-slate-600 dark:text-slate-300">Acesse todos os serviços de saúde em um só lugar</p>
-            </div>
-            {notifications > 0 && (
-              <Badge variant="destructive" className="text-sm">
-                {notifications} notificações
-              </Badge>
-            )}
+          <div className="mb-4">
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Bem-vindo ao SUS Digital</h1>
+            <p className="text-slate-600 dark:text-slate-300">Acesse todos os serviços de saúde em um só lugar</p>
           </div>
         </div>
 
@@ -174,9 +138,9 @@ export default function Menu() {
                       <item.icon className="h-6 w-6 text-white" />
                     </div>
                     {item.badge && (
-                      <Badge variant="secondary" className="text-xs">
+                      <div className="bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-300 px-2 py-0.5 rounded-full text-xs font-medium">
                         {item.badge}
-                      </Badge>
+                      </div>
                     )}
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">{item.title}</h3>
@@ -192,39 +156,6 @@ export default function Menu() {
             ))}
           </div>
         </div>
-
-        {/* Admin Section 
-        <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Área Administrativa</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {adminItems.map((item, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`p-3 ${item.color} rounded-full`}>
-                      <item.icon className="h-6 w-6 text-white" />
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">{item.title}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">{item.description}</p>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="w-full border-emerald-200 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-400 dark:hover:bg-emerald-900"
-                  >
-                    <Link href={item.href} className="flex items-center justify-center">
-                      Acessar
-                      <ChevronRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>*/}
       </main>
 
       <Footer />

@@ -24,12 +24,10 @@ import {
   User,
   ClipboardList,
   UserCheck,
-  Settings,
 } from "lucide-react"
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("visao-geral")
-  const [notifications] = useState(3)
 
   const menuItems = [
     {
@@ -82,14 +80,6 @@ export default function Dashboard() {
       <MainHeader userName="Maria Silva" userInitials="MS" />
 
       <main className="flex-1 container mx-auto px-4 py-8 mt-16">
-        {/* Header with notifications */}
-        {notifications > 0 && (
-          <div className="mb-6 text-right">
-            <Badge variant="destructive" className="text-sm">
-              {notifications} notificações
-            </Badge>
-          </div>
-        )}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
             <h1 className="text-3xl font-bold">Olá, Maria!</h1>
@@ -130,38 +120,29 @@ export default function Dashboard() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {true ? (
-                    <div>
-                      <div className="flex justify-between items-start mb-2">
-                        <div>
-                          <p className="font-medium">Cardiologia</p>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">Dr. Carlos Mendes</p>
-                        </div>
-                        <Badge>Confirmada</Badge>
+                  <div>
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <p className="font-medium">Cardiologia</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Dr. Carlos Mendes</p>
                       </div>
-                      <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mt-2">
-                        <Clock className="mr-2 h-4 w-4" />
-                        <span>15 de Junho, 2024 - 14:30</span>
-                      </div>
-                      <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mt-1">
-                        <MapPin className="mr-2 h-4 w-4" />
-                        <span>UBS Central</span>
-                      </div>
-                      <Button asChild variant="outline" className="w-full mt-4">
-                        <Link href="/consultas">
-                          Ver detalhes
-                          <ChevronRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
+                      <Badge>Confirmada</Badge>
                     </div>
-                  ) : (
-                    <div className="text-center py-4">
-                      <p className="text-gray-500 dark:text-gray-400 mb-4">Nenhuma consulta agendada</p>
-                      <Button asChild size="sm">
-                        <Link href="/agendamento">Agendar consulta</Link>
-                      </Button>
+                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mt-2">
+                      <Clock className="mr-2 h-4 w-4" />
+                      <span>15 de Junho, 2024 - 14:30</span>
                     </div>
-                  )}
+                    <div className="flex items-center text-sm text-gray-600 dark:text-gray-400 mt-1">
+                      <MapPin className="mr-2 h-4 w-4" />
+                      <span>UBS Central</span>
+                    </div>
+                    <Button asChild variant="outline" className="w-full mt-4">
+                      <Link href="/consultas">
+                        Ver detalhes
+                        <ChevronRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -179,36 +160,21 @@ export default function Dashboard() {
                         <p className="font-medium">Hemograma Completo</p>
                         <p className="text-sm text-gray-500 dark:text-gray-400">10/05/2024</p>
                       </div>
-                      <Badge
-                        variant="outline"
-                        className="bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-900/50"
-                      >
-                        Disponível
-                      </Badge>
+                      <Badge variant="outline" className="bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-900/50">Disponível</Badge>
                     </div>
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="font-medium">Glicemia em Jejum</p>
                         <p className="text-sm text-gray-500 dark:text-gray-400">10/05/2024</p>
                       </div>
-                      <Badge
-                        variant="outline"
-                        className="bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-900/50"
-                      >
-                        Disponível
-                      </Badge>
+                      <Badge variant="outline" className="bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-900/50">Disponível</Badge>
                     </div>
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="font-medium">Eletrocardiograma</p>
                         <p className="text-sm text-gray-500 dark:text-gray-400">02/05/2024</p>
                       </div>
-                      <Badge
-                        variant="outline"
-                        className="bg-yellow-50 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 border-yellow-200 dark:border-yellow-900/50"
-                      >
-                        Em análise
-                      </Badge>
+                      <Badge variant="outline" className="bg-yellow-50 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400 border-yellow-200 dark:border-yellow-900/50">Em análise</Badge>
                     </div>
                   </div>
                   <Button asChild variant="outline" className="w-full mt-4">
@@ -219,6 +185,7 @@ export default function Dashboard() {
                   </Button>
                 </CardContent>
               </Card>
+
 
               <Card className="border-none shadow-md">
                 <CardHeader className="pb-2">

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "/_not-found/page": "app/_not-found/page.js",
   "/login/page": "app/login/page.js",
   "/menu/page": "app/menu/page.js",
@@ -6,4 +7,11 @@
   "/dashboard/page": "app/dashboard/page.js",
   "/agendamento/page": "app/agendamento/page.js",
   "/page": "app/page.js"
+=======
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/menu/page": "app/menu/page.js",
+  "/agendamento/page": "app/agendamento/page.js"
+>>>>>>> 5d36006edef4022c1f21708f5e0960b7677c4c62
 }
