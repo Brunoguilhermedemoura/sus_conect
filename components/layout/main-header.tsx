@@ -66,50 +66,13 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
               >
                 Serviços
               </Link>
-<<<<<<< HEAD
-            )}
-
-            <Link
-              href="/unidades"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >
-              Unidades
-            </Link>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
-                  Informações
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
-                  <Link href="https://www.gov.br/saude/pt-br/sus">Sobre o SUS</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/informacoes">Direitos do Paciente</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/informacoes">Perguntas Frequentes</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {isHomePage ? (
-              <button
-                onClick={() => {
-                  const section = document.getElementById("contato")
-                  section?.scrollIntoView({ behavior: "smooth" })
-                }}
-=======
               <Link
                 href="/unidades"
->>>>>>> 5d36006edef4022c1f21708f5e0960b7677c4c62
                 className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"
               >
                 Unidades
               </Link>
+
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
