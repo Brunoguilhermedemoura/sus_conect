@@ -143,3 +143,6 @@
 .dark .gradient-border::before {
   background: linear-gradient(45deg, #16a34a, #22c55e, #16a34a);
 }
+html {
+  scroll-behavior: smooth;
+}

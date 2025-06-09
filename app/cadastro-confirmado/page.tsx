@@ -1,63 +1,58 @@
-import { Header } from "@/components/layout/header"
+"use client"
+
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
+
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import Link from "next/link"
-import { CheckCircle, ExternalLink } from "lucide-react"
+import { CheckCircle } from "lucide-react"
+import { SimpleHeader } from "@/components/layout/simple-header"
 
 export default function CadastroConfirmado() {
+  const router = useRouter()
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push("/login")
+    }, 5000)
+
+    return () => clearTimeout(timer)
+  }, [router])
+
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-900 to-blue-700">
-      <Header showBackButton backUrl="/menu" />
-      <main className="flex-1 container mx-auto p-4 grid md:grid-cols-3 gap-6">
-        <Card className="bg-white/10 text-white border-none shadow-xl md:col-span-2">
-          <CardHeader className="text-center">
-            <div className="flex justify-center mb-4">
-              <CheckCircle className="h-16 w-16 text-green-400" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-slate-900 dark:to-emerald-900">
+      <SimpleHeader title="Cadastro Confirmado" showBackButton backUrl="/login" />
+      <main className="container mx-auto px-4 py-8 flex items-center justify-center">
+        <Card className="border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm w-full max-w-md text-center">
+          <CardHeader className="space-y-3">
+            <div className="flex justify-center">
+              <CheckCircle className="h-16 w-16 text-green-500" />
             </div>
-            <CardTitle className="text-2xl">Cadastro Realizado com Sucesso!</CardTitle>
-            <CardDescription className="text-gray-200">Seu cadastro foi processado e está quase pronto</CardDescription>
+            <CardTitle className="text-2xl text-slate-800 dark:text-white">
+              Cadastro Realizado com Sucesso!
+            </CardTitle>
+            <CardDescription className="text-slate-600 dark:text-slate-300">
+              Seu cadastro foi concluído e está quase pronto.
+            </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="text-center text-white">
-              <p className="mb-2">Por favor, acesse o seu e-mail para confirmar seu cadastro.</p>
-              <p className="text-sm text-gray-300">
-                Pode demorar alguns minutos até que você receba o e-mail de confirmação.
-              </p>
-            </div>
 
-            <Button asChild className="w-full bg-green-600 hover:bg-green-700">
-              <Link href="/">Voltar para Tela Inicial</Link>
+          <CardContent className="space-y-4 text-slate-700 dark:text-slate-300">
+            <p>Acesse seu e-mail para confirmar o cadastro.</p>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Você será redirecionado automaticamente em instantes.
+            </p>
+
+            <Button asChild className="w-full bg-emerald-600 hover:bg-emerald-700 text-white">
+              <Link href="/login">Voltar para Tela de Login</Link>
             </Button>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-white/10 text-white border-none shadow-xl h-fit">
-          <CardHeader>
-            <CardTitle className="text-xl">Informações Úteis</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Link
-              href="http://portalsaude.saude.gov.br"
-              target="_blank"
-              className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              <span>Portal Saúde</span>
-              <ExternalLink className="h-4 w-4" />
-            </Link>
-
-            <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-              <span>Disque Saúde: 136</span>
-            </div>
-
-            <Link
-              href="https://portaldocidadao.saude.gov.br"
-              target="_blank"
-              className="flex items-center justify-between p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              <span>Portal de Saúde do Cidadão</span>
-              <ExternalLink className="h-4 w-4" />
-            </Link>
           </CardContent>
         </Card>
       </main>
