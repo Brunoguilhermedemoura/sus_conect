@@ -1,7 +1,7 @@
 {
-  "/menu/page": "app/menu/page.js",
-  "/lista-ocorrencias/page": "app/lista-ocorrencias/page.js",
-  "/agendamentos/page": "app/agendamentos/page.js",
-  "/editar-perfil/page": "app/editar-perfil/page.js",
-  "/edicao-confirmada/page": "app/edicao-confirmada/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/edicao-confirmada/page": "app/edicao-confirmada/page.js",
+  "/login/page": "app/login/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/page": "app/page.js"
 }
