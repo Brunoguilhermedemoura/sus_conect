@@ -1,7 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/edicao-confirmada/page": "app/edicao-confirmada/page.js",
-  "/login/page": "app/login/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/page": "app/page.js"
+  "/cadastro-especialidades/page": "app/cadastro-especialidades/page.js",
+  "/configuracoes/page": "app/configuracoes/page.js",
+  "/cadastro-horarios/page": "app/cadastro-horarios/page.js",
+  "/calendario/page": "app/calendario/page.js",
+  "/cadastro-unidades/page": "app/cadastro-unidades/page.js"
 }
