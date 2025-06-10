@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { UserCog, Search } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { SimpleHeader } from "@/components/layout/simple-header"
 
 interface Estado {
   id: string
@@ -156,16 +157,16 @@ export default function EditarPerfil() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-900 to-blue-700">
-      <Header showBackButton backUrl="/dados-pessoais" />
-      <main className="flex-1 container mx-auto p-4">
-        <Card className="bg-white/10 text-white border-none shadow-xl max-w-2xl mx-auto">
-          <CardHeader className="text-center">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-slate-900 dark:to-emerald-900">
+      <SimpleHeader title="Sistema de Agendamento" showBackButton backUrl="/dados-pessoais" />
+      <main className="container mx-auto px-4 py-8 flex items-center justify-center">
+        <Card className="border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm w-full max-w-md">
+          <CardHeader className="space-y-1">
             <CardTitle className="text-2xl flex items-center justify-center gap-2">
               <UserCog className="h-6 w-6" />
               Editar Cadastro
             </CardTitle>
-            <CardDescription className="text-gray-200">Informe o RG para buscar os dados do usuário</CardDescription>
+            <CardDescription className="text-slate-700 dark:text-slate-300 text-center">Informe o RG para buscar os dados do usuário</CardDescription>
           </CardHeader>
           <CardContent>
             {status && (
@@ -189,7 +190,7 @@ export default function EditarPerfil() {
                         value={rg}
                         onChange={(e) => setRg(e.target.value)}
                         placeholder="Digite o RG"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         disabled={loading}
                         required
                       />
@@ -216,7 +217,7 @@ export default function EditarPerfil() {
                         value={formData.nome}
                         onChange={handleChange}
                         placeholder="Digite seu nome completo"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         required
                       />
                     </div>
@@ -228,7 +229,7 @@ export default function EditarPerfil() {
                         value={formData.numero_sus}
                         onChange={handleChange}
                         placeholder="Digite o número do cartão SUS"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         required
                       />
                     </div>
@@ -241,7 +242,7 @@ export default function EditarPerfil() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="Digite seu e-mail"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         required
                       />
                     </div>
@@ -255,7 +256,7 @@ export default function EditarPerfil() {
                           onChange={handleChange}
                           placeholder="DDD"
                           maxLength={2}
-                          className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                          className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                           required
                         />
                       </div>
@@ -267,7 +268,7 @@ export default function EditarPerfil() {
                           value={formData.telefone}
                           onChange={handleChange}
                           placeholder="Digite seu telefone"
-                          className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                          className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                           required
                         />
                       </div>
@@ -280,7 +281,7 @@ export default function EditarPerfil() {
                         value={formData.cep}
                         onChange={handleChange}
                         placeholder="Digite seu CEP"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         required
                       />
                     </div>
@@ -292,7 +293,7 @@ export default function EditarPerfil() {
                         value={formData.endereco}
                         onChange={handleChange}
                         placeholder="Digite seu endereço"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         required
                       />
                     </div>
@@ -304,7 +305,7 @@ export default function EditarPerfil() {
                         value={formData.numero}
                         onChange={handleChange}
                         placeholder="Número"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         required
                       />
                     </div>
@@ -316,14 +317,14 @@ export default function EditarPerfil() {
                         value={formData.bairro}
                         onChange={handleChange}
                         placeholder="Digite seu bairro"
-                        className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         required
                       />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="estado">Estado</Label>
                       <Select value={formData.estado} onValueChange={(value) => handleSelectChange("estado", value)}>
-                        <SelectTrigger className="bg-white/20 border-white/10 text-white">
+                        <SelectTrigger className="btext-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                           <SelectValue placeholder="Selecione o estado" />
                         </SelectTrigger>
                         <SelectContent>
@@ -342,7 +343,7 @@ export default function EditarPerfil() {
                         onValueChange={(value) => handleSelectChange("cidade", value)}
                         disabled={!formData.estado}
                       >
-                        <SelectTrigger className="bg-white/20 border-white/10 text-white">
+                        <SelectTrigger className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                           <SelectValue placeholder="Selecione a cidade" />
                         </SelectTrigger>
                         <SelectContent>
@@ -356,7 +357,7 @@ export default function EditarPerfil() {
                     </div>
                   </div>
 
-                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 mt-6" disabled={loading}>
+                  <Button type="submit" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white" disabled={loading}>
                     {loading ? "Processando..." : "Salvar Alterações"}
                   </Button>
                 </form>
