@@ -197,7 +197,7 @@ export default function EditarPerfil() {
                       <Button
                         type="button"
                         onClick={buscarUsuario}
-                        className="bg-blue-600 hover:bg-blue-700"
+                        className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                         disabled={loading}
                       >
                         <Search className="mr-2 h-4 w-4" />

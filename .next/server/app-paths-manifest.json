@@ -1,8 +1,7 @@
 {
-  "/fale-conosco/page": "app/fale-conosco/page.js",
   "/menu/page": "app/menu/page.js",
-  "/agendamentos/page": "app/agendamentos/page.js",
   "/lista-ocorrencias/page": "app/lista-ocorrencias/page.js",
-  "/edicao-confirmada/page": "app/edicao-confirmada/page.js",
-  "/editar-perfil/page": "app/editar-perfil/page.js"
+  "/agendamentos/page": "app/agendamentos/page.js",
+  "/editar-perfil/page": "app/editar-perfil/page.js",
+  "/edicao-confirmada/page": "app/edicao-confirmada/page.js"
 }
