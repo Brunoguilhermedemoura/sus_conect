@@ -1,4 +1,4 @@
-// File: D:\projeto_dev\sus_conect\frontend\app\esqueceu-senha\page.tsx
+// File: C:\Users\User\Documents\sus_conect\app\esqueceu-senha\page.tsx
 import * as entry from '../../../../app/esqueceu-senha/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

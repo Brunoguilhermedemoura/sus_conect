@@ -1,7 +1,6 @@
 {
-  "/dashboard/page": "app/dashboard/page.js",
-  "/menu/page": "app/menu/page.js",
-  "/consultar-codigo/page": "app/consultar-codigo/page.js",
-  "/finalizacao-consulta/page": "app/finalizacao-consulta/page.js",
-  "/agendamentos/page": "app/agendamentos/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/esqueceu-senha/page": "app/esqueceu-senha/page.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js"
 }
