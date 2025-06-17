@@ -21,6 +21,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/login/page.js"
     ],
+    "/atendente/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/atendente/page.js"
+    ],
     "/dashboard/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -30,6 +35,12 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/page.js"
+    ],
+    "/unidades/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/unidades/page.css",
+      "static/chunks/app/unidades/page.js"
     ],
     "/agendamento/loading": [
       "static/chunks/webpack.js",
@@ -46,10 +57,55 @@
       "static/chunks/main-app.js",
       "static/chunks/app/menu/page.js"
     ],
-    "/_not-found/page": [
+    "/atendimento/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/atendimento/page.js"
+    ],
+    "/agendamentos/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/agendamentos/loading.js"
+    ],
+    "/agendamentos/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/agendamentos/page.js"
+    ],
+    "/confirmacao-atendimento/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/confirmacao-atendimento/loading.js"
+    ],
+    "/confirmacao-atendimento/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/confirmacao-atendimento/page.js"
+    ],
+    "/consulta-profissionais/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/consulta-profissionais/loading.js"
+    ],
+    "/consulta-profissionais/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/consulta-profissionais/page.js"
+    ],
+    "/cadastro-profissionais/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cadastro-profissionais/loading.js"
+    ],
+    "/cadastro-profissionais/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cadastro-profissionais/page.js"
+    ],
+    "/configuracoes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/configuracoes/page.js"
     ]
   }
 }
