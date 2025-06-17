@@ -1,4 +1,4 @@
-// File: D:\projeto_dev\sus_conect\frontend\app\triagem\page.tsx
+// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\triagem\page.tsx
 import * as entry from '../../../../app/triagem/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

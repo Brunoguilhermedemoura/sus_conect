@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Plus, RefreshCw } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { SimpleHeader } from "@/components/layout/simple-header"
 
 interface Municipio {
   id: string
@@ -161,10 +162,10 @@ export default function CadastroUnidades() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-900 to-blue-700">
-      <Header showBackButton backUrl="/configuracoes" />
-      <main className="flex-1 container mx-auto p-4">
-        <Card className="bg-white/10 text-white border-none shadow-xl mb-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-slate-900 dark:to-emerald-900">
+      <SimpleHeader title="Sistema de Agendamento" showBackButton backUrl="/configuracoes" />
+      <main className="container mx-auto px-4 py-8 grid grid-cols-1 items-start">
+        <Card className="border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm w-full mb-8">
           <CardHeader>
             <CardTitle className="text-xl md:text-2xl text-center">Cadastro de Unidades de Saúde</CardTitle>
           </CardHeader>
@@ -172,11 +173,11 @@ export default function CadastroUnidades() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="municipio" className="text-white">
+                  <Label htmlFor="municipio" className="dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Município
                   </Label>
                   <Select value={formData.municipio} onValueChange={(value) => handleSelectChange("municipio", value)}>
-                    <SelectTrigger className="bg-white/20 border-white/10 text-white">
+                    <SelectTrigger className="text-slate dark:text-slate-300text-slate-700 dark:text-slate-300">
                       <SelectValue placeholder="Selecione o município" />
                     </SelectTrigger>
                     <SelectContent>
@@ -189,7 +190,7 @@ export default function CadastroUnidades() {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="nome" className="text-white">
+                  <Label htmlFor="nome" className="dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Nome da Unidade
                   </Label>
                   <Input
@@ -198,11 +199,11 @@ export default function CadastroUnidades() {
                     value={formData.nome}
                     onChange={handleChange}
                     placeholder="Digite o nome da unidade"
-                    className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                    className="dark:text-slate-300text-slate-700 dark:text-slate-300"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="endereco" className="text-white">
+                  <Label htmlFor="endereco" className="dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Endereço
                   </Label>
                   <Input
@@ -211,11 +212,11 @@ export default function CadastroUnidades() {
                     value={formData.endereco}
                     onChange={handleChange}
                     placeholder="Digite o endereço completo"
-                    className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                    className="dark:text-slate-300text-slate-700 dark:text-slate-300"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="cep" className="text-white">
+                  <Label htmlFor="cep" className="dark:text-slate-300text-slate-700 dark:text-slate-300">
                     CEP
                   </Label>
                   <Input
@@ -224,12 +225,12 @@ export default function CadastroUnidades() {
                     value={formData.cep}
                     onChange={handleChange}
                     placeholder="Digite o CEP"
-                    className="bg-white/20 border-white/10 text-white placeholder:text-gray-300"
+                    className="dark:text-slate-300text-slate-700 dark:text-slate-300"
                   />
                 </div>
               </div>
               <div className="flex gap-2">
-                <Button type="submit" className="flex-1 bg-blue-600 hover:bg-blue-700" disabled={submitting}>
+                <Button type="submit" className="flex-1 dark:text-slate-300text-slate-700 dark:text-slate-300" disabled={submitting}>
                   <Plus className="mr-2 h-4 w-4" />
                   {submitting ? "Cadastrando..." : "Cadastrar"}
                 </Button>
@@ -248,7 +249,7 @@ export default function CadastroUnidades() {
           </CardContent>
         </Card>
 
-        <Card className="bg-white/10 text-white border-none shadow-xl">
+        <Card className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
           <CardHeader>
             <CardTitle className="text-xl md:text-2xl text-center">Unidades Cadastradas</CardTitle>
           </CardHeader>
@@ -267,24 +268,24 @@ export default function CadastroUnidades() {
                 <TableBody>
                   {loading ? (
                     <TableRow>
-                      <TableCell colSpan={5} className="text-center py-8 text-white">
+                      <TableCell colSpan={5} className="text-center py-8 text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                         Carregando unidades...
                       </TableCell>
                     </TableRow>
                   ) : unidades.length === 0 ? (
                     <TableRow>
-                      <TableCell colSpan={5} className="text-center py-8 text-white">
+                      <TableCell colSpan={5} className="text-center py-8 text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                         Nenhuma unidade cadastrada.
                       </TableCell>
                     </TableRow>
                   ) : (
                     unidades.map((unidade) => (
-                      <TableRow key={unidade.id} className="border-b border-white/10 hover:bg-white/5">
-                        <TableCell className="text-white">{unidade.id}</TableCell>
-                        <TableCell className="text-white">{unidade.unidade_nome}</TableCell>
-                        <TableCell className="text-white">{unidade.municipio_nome}</TableCell>
-                        <TableCell className="text-white">{unidade.endereco}</TableCell>
-                        <TableCell className="text-white">{unidade.cep}</TableCell>
+                      <TableRow key={unidade.id} className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{unidade.id}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{unidade.unidade_nome}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{unidade.municipio_nome}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{unidade.endereco}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{unidade.cep}</TableCell>
                       </TableRow>
                     ))
                   )}

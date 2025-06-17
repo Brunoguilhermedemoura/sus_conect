@@ -1,7 +1,9 @@
 {
-  "/dashboard/page": "app/dashboard/page.js",
-  "/menu/page": "app/menu/page.js",
-  "/consultar-codigo/page": "app/consultar-codigo/page.js",
-  "/finalizacao-consulta/page": "app/finalizacao-consulta/page.js",
-  "/agendamentos/page": "app/agendamentos/page.js"
+  "/dados-pessoais/page": "app/dados-pessoais/page.js",
+  "/cadastro-unidades/page": "app/cadastro-unidades/page.js",
+  "/cadastro-horarios/page": "app/cadastro-horarios/page.js",
+  "/configuracoes/page": "app/configuracoes/page.js",
+  "/cadastro-profissionais/page": "app/cadastro-profissionais/page.js",
+  "/page": "app/page.js",
+  "/atendimento/page": "app/atendimento/page.js"
 }

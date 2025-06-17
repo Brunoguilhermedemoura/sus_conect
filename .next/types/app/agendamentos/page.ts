@@ -1,4 +1,4 @@
-// File: D:\projeto_dev\sus_conect\frontend\app\agendamentos\page.tsx
+// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\agendamentos\page.tsx
 import * as entry from '../../../../app/agendamentos/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
