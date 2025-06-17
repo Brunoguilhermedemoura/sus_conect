@@ -1,8 +1,7 @@
 {
-  "/cadastro-profissionais/page": "app/cadastro-profissionais/page.js",
-  "/configuracoes/page": "app/configuracoes/page.js",
+  "/atendimento/page": "app/atendimento/page.js",
+  "/confirmacao-atendimento/page": "app/confirmacao-atendimento/page.js",
+  "/agendamentos/page": "app/agendamentos/page.js",
   "/menu/page": "app/menu/page.js",
-  "/page": "app/page.js",
-  "/login/page": "app/login/page.js",
   "/atendente/page": "app/atendente/page.js"
 }
