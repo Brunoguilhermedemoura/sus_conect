@@ -1,7 +1,9 @@
 {
+  "/login/page": "app/login/page.js",
+  "/atendente/page": "app/atendente/page.js",
+  "/atendimento/page": "app/atendimento/page.js",
   "/configuracoes/page": "app/configuracoes/page.js",
-  "/informacoes/page": "app/informacoes/page.js",
-  "/cadastro-profissionais/page": "app/cadastro-profissionais/page.js",
-  "/cadastro-unidades/page": "app/cadastro-unidades/page.js",
-  "/atendimento/page": "app/atendimento/page.js"
+  "/confirmacao-atendimento/page": "app/confirmacao-atendimento/page.js",
+  "/cadastro-horarios/page": "app/cadastro-horarios/page.js",
+  "/calendario/page": "app/calendario/page.js"
 }
