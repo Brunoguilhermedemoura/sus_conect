@@ -1,4 +1,4 @@
-// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\atendente\page.tsx
+// File: C:\Users\User\Documents\sus_conect\app\atendente\page.tsx
 import * as entry from '../../../../app/atendente/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
