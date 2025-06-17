@@ -175,6 +175,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/trocar-senha/page.js"
+    ],
+    "/informacoes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/informacoes/page.js"
     ]
   }
 }

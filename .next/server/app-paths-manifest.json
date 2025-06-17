@@ -1,8 +1,7 @@
 {
   "/configuracoes/page": "app/configuracoes/page.js",
-  "/cadastro-horarios/page": "app/cadastro-horarios/page.js",
-  "/cadastro-unidades/page": "app/cadastro-unidades/page.js",
+  "/informacoes/page": "app/informacoes/page.js",
   "/cadastro-profissionais/page": "app/cadastro-profissionais/page.js",
-  "/atendimento/page": "app/atendimento/page.js",
-  "/atendente/page": "app/atendente/page.js"
+  "/cadastro-unidades/page": "app/cadastro-unidades/page.js",
+  "/atendimento/page": "app/atendimento/page.js"
 }
