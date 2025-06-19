@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // File: D:\projeto_dev\sus_conect\frontend\app\login\page.tsx
 =======
 // File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\login\page.tsx
 >>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa
+=======
+// File: C:\Users\User\Documents\sus_conect\app\login\page.tsx
+>>>>>>> d09fb211a073fd1f8081edfbf77bc6771eda410c
 import * as entry from '../../../../app/login/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

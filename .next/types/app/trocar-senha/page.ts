@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 <<<<<<<< HEAD:.next/types/app/trocar-senha/page.ts
 // File: D:\projeto_dev\sus_conect\frontend\app\trocar-senha\page.tsx
+=======
+// File: C:\Users\User\Documents\sus_conect\app\trocar-senha\page.tsx
+>>>>>>> d09fb211a073fd1f8081edfbf77bc6771eda410c
 import * as entry from '../../../../app/trocar-senha/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
 type TEntry = typeof import('../../../../app/trocar-senha/page.js')
+<<<<<<< HEAD
 ========
 // File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\atendimento\page.tsx
 import * as entry from '../../../../app/atendimento/page.js'
@@ -11,6 +16,8 @@ import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadat
 
 type TEntry = typeof import('../../../../app/atendimento/page.js')
 >>>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa:.next/types/app/atendimento/page.ts
+=======
+>>>>>>> d09fb211a073fd1f8081edfbf77bc6771eda410c
 
 type SegmentParams<T extends Object = any> = T extends Record<string, any>
   ? { [K in keyof T]: T[K] extends string ? string | string[] | undefined : never }

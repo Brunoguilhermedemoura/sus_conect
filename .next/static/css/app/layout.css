@@ -1790,9 +1790,14 @@ video {
 .bg-yellow-500\/20 {
   background-color: rgb(234 179 8 / 0.2);
 }
+<<<<<<< HEAD
 .bg-gray-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
+=======
+.bg-black\/10 {
+  background-color: rgb(0 0 0 / 0.1);
+>>>>>>> d09fb211a073fd1f8081edfbf77bc6771eda410c
 }
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
@@ -1903,6 +1908,9 @@ video {
 }
 .fill-current {
   fill: currentColor;
+}
+.object-contain {
+  object-fit: contain;
 }
 .p-0 {
   padding: 0px;
@@ -3812,6 +3820,10 @@ html {
 .dark\:text-yellow-400:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+.dark\:text-red-400:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity, 1));
 }
 .dark\:hover\:bg-emerald-900:hover:is(.dark *) {
   --tw-bg-opacity: 1;

@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "/informacoes/page": "app/informacoes/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/login/page": "app/login/page.js",
@@ -14,4 +15,11 @@
   "/cadastro-horarios/page": "app/cadastro-horarios/page.js",
   "/calendario/page": "app/calendario/page.js"
 >>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa
+=======
+  "/login/page": "app/login/page.js",
+  "/atendente/page": "app/atendente/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/esqueceu-senha/page": "app/esqueceu-senha/page.js",
+  "/page": "app/page.js"
+>>>>>>> d09fb211a073fd1f8081edfbf77bc6771eda410c
 }
