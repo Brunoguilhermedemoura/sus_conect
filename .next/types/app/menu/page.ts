@@ -1,9 +1,15 @@
 <<<<<<< HEAD
-// File: D:\projeto_dev\sus_conect\frontend\app\menu\page.tsx
-=======
-// File: C:\Users\Daniel\Documents\sus_conect_2\app\menu\page.tsx
->>>>>>> 5d36006edef4022c1f21708f5e0960b7677c4c62
+<<<<<<<< HEAD:.next/types/app/menu/page.ts
+// File: C:\Users\User\Documents\sus_conect\app\menu\page.tsx
 import * as entry from '../../../../app/menu/page.js'
+========
+// File: C:\Users\Daniel\Documents\sus_conect_4\app\unidades\page.tsx
+import * as entry from '../../../../app/unidades/page.js'
+>>>>>>>> 22884cb836af15cc9bd5e1386c48193050901020:.next/types/app/unidades/page.ts
+=======
+// File: C:\Users\Daniel\Documents\sus_conect_4\app\menu\page.tsx
+import * as entry from '../../../../app/menu/page.js'
+>>>>>>> 22884cb836af15cc9bd5e1386c48193050901020
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
 type TEntry = typeof import('../../../../app/menu/page.js')

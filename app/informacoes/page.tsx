@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'; // --- 1. IMPORTAÇÃO ADICIONAL --
 import { motion, AnimatePresence } from 'framer-motion';
 // --- Ícone ArrowLeft adicionado ---
 import { ArrowLeft, ShieldCheck, HelpCircle, FileText, BookUser, ChevronDown, HeartPulse, Info, Users, Lock, Copy, AlertTriangle, CheckCircle, Ban } from 'lucide-react';
-
+import { SimpleHeader } from "@/components/layout/simple-header"
 // --- Componentes Reutilizáveis (sem alteração) ---
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
     // ...código do componente sem alterações
@@ -63,6 +63,7 @@ export default function InformacoesSUSConnect() {
   };
   
   const faqItems = [
+    
     { title: "Como agendar uma consulta pelo SUS Connect?", content: "Acesse sua conta, vá em \"Agendamentos\", escolha a especialidade, a unidade de saúde e o horário desejado entre as opções disponíveis." },
     { title: "Posso alterar ou cancelar um agendamento?", content: "Sim. Para gerenciar seus compromissos, acesse a seção \"Minhas Consultas\" na sua área de usuário, onde você poderá cancelar ou remarcar." },
     { title: "O que fazer se eu esquecer minha senha?", content: "Na tela de login, clique no link “Esqueceu sua senha?”. Você receberá instruções por e-mail para criar uma nova senha de forma segura." },
@@ -151,19 +152,24 @@ export default function InformacoesSUSConnect() {
   const ActiveIcon = tabsData[activeTab].icon;
 
   return (
+    
+<<<<<<< HEAD
     <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-cyan-100 to-sky-100 dark:from-slate-900 dark:to-slate-800 py-16 px-4">
       <div className="container max-w-4xl mx-auto relative"> {/* Adicionado "relative" */}
+=======
+    
+    <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-cyan-100 to-sky-100 dark:from-slate-900 dark:to-slate-800  ">
+      <SimpleHeader title="Validação de Atendimento" showBackButton backUrl="/atendente" />
+      <div className="w-full px-4 relative max-w-4xl mx-auto">
+
+ {/* Adicionado "relative" */}
+        
+>>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa
 
         {/* --- 3. BOTÃO VOLTAR --- */}
-        <button
-          onClick={() => router.back()}
-          className="absolute -top-8 left-0 flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg p-1"
-        >
-          <ArrowLeft size={20} />
-          <span className="font-semibold text-sm">Voltar</span>
-        </button>
 
-        <header className="text-center mb-12">
+        <header className="text-center mb-12 mt-4">
+          
           <HeartPulse className="mx-auto text-emerald-500" size={64} />
           <h1 className="text-5xl font-bold text-slate-800 dark:text-white mt-4">Central de Informações</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
