@@ -93,18 +93,32 @@ export default function IndexAtendente() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-slate-900 dark:to-emerald-900">
       <MainHeader />
 
+<<<<<<< HEAD
       <main className="container mx-auto px-4 py-8 pt-28 md:pt-32">
         {/* Header da página */}
+=======
+      <main className="container mx-auto px-4 py-8 mt-12">
+        {/* Header Section */}
+>>>>>>> 22884cb836af15cc9bd5e1386c48193050901020
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Portal do Atendente</h1>
               <p className="text-slate-600 dark:text-slate-300">Sistema de gestão para atendentes do SUS</p>
             </div>
+<<<<<<< HEAD
             {/*<Badge variant="secondary" className="text-sm">
               <Bell className="h-4 w-4 mr-1" />
               {atendimentosHoje} atendimentos hoje
             </Badge>*/}
+=======
+
+            {/* Remover essa parte abaixo */}
+            {/* <Badge variant="secondary" className="text-sm">
+              <Bell className="h-4 w-4 mr-1" />
+              {atendimentosHoje} atendimentos hoje
+            </Badge> */}
+>>>>>>> 22884cb836af15cc9bd5e1386c48193050901020
           </div>
         </div>
 

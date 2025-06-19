@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: C:\Users\User\Documents\sus_conect\app\dashboard\page.tsx
+=======
+// File: C:\Users\Daniel\Documents\sus_conect_4\app\dashboard\page.tsx
+>>>>>>> 22884cb836af15cc9bd5e1386c48193050901020
 import * as entry from '../../../../app/dashboard/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

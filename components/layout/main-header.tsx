@@ -36,7 +36,7 @@ export function MainHeader({ userName = "Maria Silva", userInitials = "MS", user
   }, [])
 
   const isHomePage = pathname === "/"
-  const isDashboardPage = pathname.startsWith("/dashboard") || pathname === "/menu"
+  const isDashboardPage = pathname.startsWith("/dashboard") || pathname === "/menu" || pathname.startsWith("/atendente")
 
   return (
     <header

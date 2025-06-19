@@ -1,6 +1,7 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "/informacoes/page": "app/informacoes/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/login/page": "app/login/page.js",
@@ -22,4 +23,11 @@
   "/esqueceu-senha/page": "app/esqueceu-senha/page.js",
   "/page": "app/page.js"
 >>>>>>> d09fb211a073fd1f8081edfbf77bc6771eda410c
+=======
+  "/atendimento/page": "app/atendimento/page.js",
+  "/confirmacao-atendimento/page": "app/confirmacao-atendimento/page.js",
+  "/agendamentos/page": "app/agendamentos/page.js",
+  "/menu/page": "app/menu/page.js",
+  "/atendente/page": "app/atendente/page.js"
+>>>>>>> 22884cb836af15cc9bd5e1386c48193050901020
 }
