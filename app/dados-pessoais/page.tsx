@@ -33,12 +33,7 @@ export default function DadosPessoais() {
                 <span>Editar Cadastro</span>
               </Link>
             </Button>
-            <Button asChild variant="destructive" className="w-full">
-              <Link href="/menu" className="flex items-center justify-center gap-2">
-                <ArrowLeft className="h-5 w-5" />
-                <span>Voltar</span>
-              </Link>
-            </Button>
+            
           </CardContent>
         </Card>
       </main>

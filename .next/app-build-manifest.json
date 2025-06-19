@@ -25,6 +25,7 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/atendente/page.js"
+<<<<<<< HEAD
     ],
     "/configuracoes/page": [
       "static/chunks/webpack.js",
@@ -75,12 +76,15 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/trocar-senha/page.js"
+=======
+>>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa
     ],
-    "/informacoes/page": [
+    "/atendimento/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/informacoes/page.js"
+      "static/chunks/app/atendimento/page.js"
     ],
+<<<<<<< HEAD
     "/cadastro-horarios/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -90,10 +94,32 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/atendimento/page.js"
-    ],
-    "/agendamentos/loading": [
+=======
+    "/confirmacao-atendimento/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/chunks/app/confirmacao-atendimento/loading.js"
+    ],
+    "/confirmacao-atendimento/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/confirmacao-atendimento/page.js"
+    ],
+    "/configuracoes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/configuracoes/page.js"
+    ],
+    "/cadastro-horarios/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cadastro-horarios/page.js"
+>>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa
+    ],
+    "/calendario/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+<<<<<<< HEAD
       "static/chunks/app/agendamentos/loading.js"
     ],
     "/agendamentos/page": [
@@ -120,6 +146,9 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/confirmacao-atendimento/page.js"
+=======
+      "static/chunks/app/calendario/page.js"
+>>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa
     ]
   }
 }

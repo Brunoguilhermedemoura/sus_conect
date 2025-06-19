@@ -13,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Plus, Trash } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { SimpleHeader } from "@/components/layout/simple-header"
 
 interface Profissional {
   id: string
@@ -192,10 +193,10 @@ export default function CadastroHorarios() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-900 to-blue-700">
-      <Header showBackButton backUrl="/configuracoes" />
-      <main className="flex-1 container mx-auto p-4">
-        <Card className="bg-white/10 text-white border-none shadow-xl mb-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-slate-900 dark:to-emerald-900">
+      <SimpleHeader title="Sistema de Agendamento" showBackButton backUrl="/configuracoes" />
+      <main className="container mx-auto px-4 py-8 grid grid-cols-1 items-start">
+        <Card className="border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm w-full mb-8">
           <CardHeader>
             <CardTitle className="text-xl md:text-2xl text-center">Inserir Horários Disponíveis</CardTitle>
           </CardHeader>
@@ -203,14 +204,14 @@ export default function CadastroHorarios() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="calendario" className="text-white">
+                  <Label htmlFor="calendario" className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Calendário
                   </Label>
                   <Select
                     value={formData.calendario}
                     onValueChange={(value) => handleSelectChange("calendario", value)}
                   >
-                    <SelectTrigger className="bg-white/20 border-white/10 text-white">
+                    <SelectTrigger className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                       <SelectValue placeholder="Selecione o calendário" />
                     </SelectTrigger>
                     <SelectContent>
@@ -223,14 +224,14 @@ export default function CadastroHorarios() {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="profissional" className="text-white">
+                  <Label htmlFor="profissional" className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Profissional
                   </Label>
                   <Select
                     value={formData.profissional}
                     onValueChange={(value) => handleSelectChange("profissional", value)}
                   >
-                    <SelectTrigger className="bg-white/20 border-white/10 text-white">
+                    <SelectTrigger className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                       <SelectValue placeholder="Selecione o profissional" />
                     </SelectTrigger>
                     <SelectContent>
@@ -243,7 +244,7 @@ export default function CadastroHorarios() {
                   </Select>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="data" className="text-white">
+                  <Label htmlFor="data" className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Data
                   </Label>
                   <Input
@@ -252,11 +253,11 @@ export default function CadastroHorarios() {
                     type="date"
                     value={formData.data}
                     onChange={handleChange}
-                    className="bg-white/20 border-white/10 text-white"
+                    className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="hora" className="text-white">
+                  <Label htmlFor="hora" className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Hora
                   </Label>
                   <Input
@@ -265,15 +266,15 @@ export default function CadastroHorarios() {
                     type="time"
                     value={formData.hora}
                     onChange={handleChange}
-                    className="bg-white/20 border-white/10 text-white"
+                    className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="status" className="text-white">
+                  <Label htmlFor="status" className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                     Status
                   </Label>
                   <Select value={formData.status} onValueChange={(value) => handleSelectChange("status", value)}>
-                    <SelectTrigger className="bg-white/20 border-white/10 text-white">
+                    <SelectTrigger className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                       <SelectValue placeholder="Selecione o status" />
                     </SelectTrigger>
                     <SelectContent>
@@ -283,15 +284,15 @@ export default function CadastroHorarios() {
                   </Select>
                 </div>
               </div>
-              <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={submitting}>
-                <Plus className="mr-2 h-4 w-4" />
+              <Button type="submit" className="w-full flex-1 dark:text-slate-300text-slate-700 dark:text-slate-300" disabled={submitting}>
+                <Plus className="text-slate dark:text-slate-300text-slate-700 dark:text-slate-300" />
                 {submitting ? "Inserindo..." : "Inserir Horário"}
               </Button>
             </form>
           </CardContent>
         </Card>
 
-        <Card className="bg-white/10 text-white border-none shadow-xl">
+        <Card className="border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm w-full text-slate-700 dark:text-slate-300 mb-8">
           <CardHeader>
             <CardTitle className="text-xl md:text-2xl text-center">Horários Cadastrados</CardTitle>
           </CardHeader>
@@ -306,31 +307,31 @@ export default function CadastroHorarios() {
                     <TableHead className="text-white">Data</TableHead>
                     <TableHead className="text-white">Hora</TableHead>
                     <TableHead className="text-white">Status</TableHead>
-                    <TableHead className="text-white text-right">Ações</TableHead>
+                    <TableHead className="text-white">Ações</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {loading ? (
                     <TableRow>
-                      <TableCell colSpan={7} className="text-center py-8 text-white">
+                      <TableCell colSpan={7} className="text-center py-8 text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                         Carregando horários...
                       </TableCell>
                     </TableRow>
                   ) : horarios.length === 0 ? (
                     <TableRow>
-                      <TableCell colSpan={7} className="text-center py-8 text-white">
+                      <TableCell colSpan={7} className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                         Nenhum horário cadastrado.
                       </TableCell>
                     </TableRow>
                   ) : (
                     horarios.map((horario) => (
-                      <TableRow key={horario.id} className="border-b border-white/10 hover:bg-white/5">
-                        <TableCell className="text-white">{horario.id}</TableCell>
-                        <TableCell className="text-white">{horario.calendario}</TableCell>
-                        <TableCell className="text-white">{horario.profissional}</TableCell>
-                        <TableCell className="text-white">{formatarData(horario.data)}</TableCell>
-                        <TableCell className="text-white">{horario.hora}</TableCell>
-                        <TableCell className="text-white">
+                      <TableRow key={horario.id} className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{horario.id}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{horario.calendario}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{horario.profissional}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{formatarData(horario.data)}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">{horario.hora}</TableCell>
+                        <TableCell className="text-slate-700 dark:text-slate-300text-slate-700 dark:text-slate-300">
                           <span
                             className={`px-2 py-1 rounded-full text-xs ${
                               horario.status === "disponível"

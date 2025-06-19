@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 // File: D:\projeto_dev\sus_conect\frontend\app\confirmacao-atendimento\page.tsx
 import * as entry from '../../../../app/confirmacao-atendimento/page.js'
+=======
+<<<<<<<< HEAD:.next/types/app/cadastro-especialidades/page.ts
+// File: D:\projeto_dev\sus_conect\frontend\app\cadastro-especialidades\page.tsx
+import * as entry from '../../../../app/cadastro-especialidades/page.js'
+========
+// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\confirmacao-atendimento\page.tsx
+import * as entry from '../../../../app/confirmacao-atendimento/page.js'
+>>>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa:.next/types/app/confirmacao-atendimento/page.ts
+>>>>>>> f7ae75af11554a74e903298ea44b4469a1c506aa
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
 type TEntry = typeof import('../../../../app/confirmacao-atendimento/page.js')
