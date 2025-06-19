@@ -1,4 +1,4 @@
-// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\configuracoes\page.tsx
+// File: D:\projeto_dev\sus_conect\frontend\app\configuracoes\page.tsx
 import * as entry from '../../../../app/configuracoes/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

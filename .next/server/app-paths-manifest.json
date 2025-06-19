@@ -1,7 +1,7 @@
 {
+  "/informacoes/page": "app/informacoes/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/menu/page": "app/menu/page.js",
-  "/consultar-codigo/page": "app/consultar-codigo/page.js",
-  "/finalizacao-consulta/page": "app/finalizacao-consulta/page.js",
-  "/agendamentos/page": "app/agendamentos/page.js"
+  "/login/page": "app/login/page.js",
+  "/confirmacao-atendimento/page": "app/confirmacao-atendimento/page.js",
+  "/page": "app/page.js"
 }

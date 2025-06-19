@@ -20,9 +20,9 @@ import {
 } from "lucide-react"
 
 export default function IndexAtendente() {
-  const atendimentosHoje = 12
-  const pendentes = 3
-  const confirmados = 9
+  const atendimentosHoje = 0;
+  const pendentes = 0;
+  const confirmados = 0;
 
   const funcionalidades = [
     {
@@ -31,7 +31,6 @@ export default function IndexAtendente() {
       icon: UserCheck,
       href: "/atendimento",
       color: "bg-emerald-500",
-      badge: `${pendentes} pendentes`,
     },
     {
       title: "Confirmação de Atendimento",
@@ -39,7 +38,6 @@ export default function IndexAtendente() {
       icon: ClipboardCheck,
       href: "/confirmacao-atendimento",
       color: "bg-blue-500",
-      badge: `${confirmados} confirmados`,
     },
     {
       title: "Consulta de Agendamentos",
@@ -55,6 +53,13 @@ export default function IndexAtendente() {
       href: "/consulta-profissionais",
       color: "bg-orange-500",
     },
+    {
+      title: "Configurações sistema",
+      description: "Configurar sistema",
+      icon: Settings,
+      href: "/configuracoes",
+      color: "bg-gray-500",
+    }
   ]
 
   const configuracoes = [
@@ -81,29 +86,29 @@ export default function IndexAtendente() {
       description: "Configurar horários de atendimento",
       icon: Clock,
       href: "/cadastro-horarios",
-    },
+    }
   ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-slate-900 dark:to-emerald-900">
       <MainHeader />
 
-      <main className="container mx-auto px-4 py-8">
-        {/* Header Section */}
+      <main className="container mx-auto px-4 py-8 pt-28 md:pt-32">
+        {/* Header da página */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Portal do Atendente</h1>
               <p className="text-slate-600 dark:text-slate-300">Sistema de gestão para atendentes do SUS</p>
             </div>
-            <Badge variant="secondary" className="text-sm">
+            {/*<Badge variant="secondary" className="text-sm">
               <Bell className="h-4 w-4 mr-1" />
               {atendimentosHoje} atendimentos hoje
-            </Badge>
+            </Badge>*/}
           </div>
         </div>
 
-        {/* Quick Stats */}
+        {/* Indicadores rápidos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Card className="border-0 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm">
             <CardContent className="p-6">
@@ -148,7 +153,7 @@ export default function IndexAtendente() {
           </Card>
         </div>
 
-        {/* Funcionalidades Principais */}
+        {/* Funcionalidades principais */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Funcionalidades Principais</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -182,38 +187,43 @@ export default function IndexAtendente() {
           </div>
         </div>
 
-        {/* Configurações do Sistema */}
+        {/* Configurações do sistema 
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Configurações do Sistema</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
             {configuracoes.map((item, index) => (
               <Card
                 key={index}
                 className="border-0 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm hover:shadow-xl transition-all duration-300"
               >
                 <CardContent className="p-4">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="p-2 bg-slate-100 dark:bg-slate-700 rounded-full">
-                      <item.icon className="h-4 w-4 text-slate-600 dark:text-slate-400" />
+                  <div className="flex items-center space-x-3">
+                    <div className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg">
+                      <item.icon className="h-5 w-5 text-slate-600 dark:text-slate-400" />
                     </div>
-                    <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{item.title}</h3>
+                    <div>
+                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white">{item.title}</h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">{item.description}</p>
+                    </div>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mb-3">{item.description}</p>
                   <Button
                     asChild
                     variant="outline"
                     size="sm"
-                    className="w-full border-emerald-200 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-400 dark:hover:bg-emerald-900"
+                    className="w-full mt-3 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50"
                   >
-                    <Link href={item.href}>Acessar</Link>
+                    <Link href={item.href} className="flex items-center justify-center">
+                      Acessar
+                      <ChevronRight className="ml-1 h-3.5 w-3.5" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
+        </div>*/}
 
-        {/* Acesso Rápido */}
+        {/* Acesso rápido 
         <div className="mt-8">
           <Card className="border-0 shadow-lg bg-gradient-to-r from-emerald-500 to-blue-500 text-white">
             <CardHeader>
@@ -242,7 +252,7 @@ export default function IndexAtendente() {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </div>*/}
       </main>
 
       <Footer />

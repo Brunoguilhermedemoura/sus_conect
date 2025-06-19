@@ -151,6 +151,7 @@ export default function InformacoesSUSConnect() {
   const ActiveIcon = tabsData[activeTab].icon;
 
   return (
+    
     <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-cyan-100 to-sky-100 dark:from-slate-900 dark:to-slate-800 py-16 px-4">
       <div className="container max-w-4xl mx-auto relative"> {/* Adicionado "relative" */}
 

@@ -53,7 +53,7 @@ export default function Configuracoes() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-slate-900 dark:to-emerald-900">
-      <SimpleHeader title="Configurações do Sistema" showBackButton backUrl="/menu" />
+      <SimpleHeader title="Configurações do Sistema" showBackButton backUrl="/atendente" />
 
       <main className="container mx-auto px-4 py-8">
         <Card className="border-0 shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm max-w-4xl mx-auto">

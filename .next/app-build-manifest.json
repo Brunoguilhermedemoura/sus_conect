@@ -16,46 +16,80 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/unidades/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/unidades/page.css",
-      "static/chunks/app/unidades/page.js"
-    ],
     "/login/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/login/page.js"
     ],
-    "/esqueceu-senha/page": [
+    "/atendente/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/esqueceu-senha/page.js"
+      "static/chunks/app/atendente/page.js"
+    ],
+    "/configuracoes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/configuracoes/page.js"
+    ],
+    "/calendario/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/calendario/page.js"
+    ],
+    "/cadastro-profissionais/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cadastro-profissionais/loading.js"
+    ],
+    "/cadastro-profissionais/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cadastro-profissionais/page.js"
+    ],
+    "/cadastro-unidades/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cadastro-unidades/page.js"
+    ],
+    "/menu/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/menu/page.js"
+    ],
+    "/cadastro-especialidades/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cadastro-especialidades/page.js"
+    ],
+    "/consulta-profissionais/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/consulta-profissionais/loading.js"
+    ],
+    "/consulta-profissionais/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/consulta-profissionais/page.js"
+    ],
+    "/trocar-senha/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/trocar-senha/page.js"
     ],
     "/informacoes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/informacoes/page.js"
     ],
-    "/dashboard/loading": [
+    "/cadastro-horarios/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/loading.js"
+      "static/chunks/app/cadastro-horarios/page.js"
     ],
-    "/dashboard/page": [
+    "/atendimento/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/page.js"
-    ],
-    "/agendamento/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/agendamento/loading.js"
-    ],
-    "/agendamento/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/agendamento/page.js"
+      "static/chunks/app/atendimento/page.js"
     ],
     "/agendamentos/loading": [
       "static/chunks/webpack.js",
@@ -67,40 +101,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/agendamentos/page.js"
     ],
-    "/menu/page": [
+    "/dashboard/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/menu/page.js"
+      "static/chunks/app/dashboard/loading.js"
     ],
-    "/triagem/page": [
+    "/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/triagem/page.js"
+      "static/chunks/app/dashboard/page.js"
     ],
-    "/consultar-codigo/page": [
+    "/confirmacao-atendimento/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/consultar-codigo/page.js"
+      "static/chunks/app/confirmacao-atendimento/loading.js"
     ],
-    "/lista-ocorrencias/loading": [
+    "/confirmacao-atendimento/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/lista-ocorrencias/loading.js"
-    ],
-    "/lista-ocorrencias/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/lista-ocorrencias/page.js"
-    ],
-    "/dados-pessoais/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dados-pessoais/page.js"
-    ],
-    "/finalizacao-consulta/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/finalizacao-consulta/page.js"
+      "static/chunks/app/confirmacao-atendimento/page.js"
     ]
   }
 }

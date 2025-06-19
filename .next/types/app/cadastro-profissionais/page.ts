@@ -1,4 +1,4 @@
-// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\cadastro-profissionais\page.tsx
+// File: D:\projeto_dev\sus_conect\frontend\app\cadastro-profissionais\page.tsx
 import * as entry from '../../../../app/cadastro-profissionais/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

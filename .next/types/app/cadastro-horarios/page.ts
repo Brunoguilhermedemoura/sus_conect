@@ -1,4 +1,4 @@
-// File: C:\Users\vitor\OneDrive\Documentos\sus_conect\app\cadastro-horarios\page.tsx
+// File: D:\projeto_dev\sus_conect\frontend\app\cadastro-horarios\page.tsx
 import * as entry from '../../../../app/cadastro-horarios/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
