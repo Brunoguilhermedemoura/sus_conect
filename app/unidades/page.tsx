@@ -1,29 +1,20 @@
 "use client"
 
 import { useState } from "react"
+import dynamic from "next/dynamic"
 import { SimpleHeader } from "@/components/layout/simple-header"
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
-import "leaflet/dist/leaflet.css"
 import { Search, MapPin, Loader2, Eye, XCircle } from "lucide-react"
-import L from "leaflet"
 
-delete (L.Icon.Default.prototype as any)._getIconUrl
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
-})
-
-function FocusOnMarker({ lat, lng }: { lat: number; lng: number }) {
-  const map = useMap()
-  map.setView([lat, lng], 16, { animate: true })
-  return null
-}
+// Componente do mapa que será carregado dinamicamente apenas no cliente
+const DynamicMap = dynamic(
+  () => import("./map-component").then((mod) => mod.DynamicMap),
+  { ssr: false }
+)
 
 export default function BuscarUnidades() {
   const [estadoInput, setEstadoInput] = useState("")
@@ -68,8 +59,8 @@ export default function BuscarUnidades() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-slate-100 to-emerald-100 dark:from-slate-900 dark:via-emerald-900 dark:to-slate-950">
-      <SimpleHeader title="Unidades de Saúde" showBackButton backUrl="/" /> 
- 
+      <SimpleHeader title="Unidades de Saúde" showBackButton backUrl="/" />
+
       <main className="container mx-auto px-4 py-12 flex flex-col items-center">
         <Card className="shadow-2xl rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-md w-full max-w-2xl mb-10 transform transition hover:scale-105">
           <CardHeader className="pt-8">
@@ -134,9 +125,8 @@ export default function BuscarUnidades() {
               {unidades.map((uni) => (
                 <div
                   key={uni.id}
-                  className={`p-4 rounded-xl shadow-lg bg-white dark:bg-slate-700 hover:ring-2 hover:ring-emerald-400 transition ${
-                    selectedUnit && selectedUnit.id === uni.id ? "ring-2 ring-emerald-500" : ""
-                  }`}
+                  className={`p-4 rounded-xl shadow-lg bg-white dark:bg-slate-700 hover:ring-2 hover:ring-emerald-400 transition ${selectedUnit && selectedUnit.id === uni.id ? "ring-2 ring-emerald-500" : ""
+                    }`}
                 >
                   <div className="flex justify-between items-center">
                     <div className="w-2/3">
@@ -171,21 +161,7 @@ export default function BuscarUnidades() {
                 Fechar mapa
               </button>
             </div>
-            <MapContainer center={[selectedUnit.lat, selectedUnit.lng]} zoom={16} style={{ height: "100%", width: "100%" }}>
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <FocusOnMarker lat={selectedUnit.lat} lng={selectedUnit.lng} />
-              <Marker position={[selectedUnit.lat, selectedUnit.lng]}>
-                <Popup>
-                  <div className="text-sm">
-                    <p className="font-semibold text-emerald-700 dark:text-emerald-400 mb-1">{selectedUnit.nome.split(",")[0]}</p>
-                    <p className="text-xs">{selectedUnit.nome}</p>
-                  </div>
-                </Popup>
-              </Marker>
-            </MapContainer>
+            <DynamicMap selectedUnit={selectedUnit} />
           </div>
         )}
       </main>

@@ -1,15 +1,1 @@
-{
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "/_error": "pages/_error.js",
-  "/_app": "pages/_app.js",
-=======
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
->>>>>>> d09fb211a073fd1f8081edfbf77bc6771eda410c
-=======
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
->>>>>>> 22884cb836af15cc9bd5e1386c48193050901020
-  "/_document": "pages/_document.js"
-}
+{}
